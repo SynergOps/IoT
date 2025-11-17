@@ -1,29 +1,29 @@
 # 02_Input
 
-## Input Devices and Sensors
+## Συσκευές Εισόδου και Αισθητήρες
 
-This folder contains projects focused on reading input from various devices.
+Αυτός ο φάκελος περιέχει έργα που επικεντρώνονται στην ανάγνωση εισόδου από διάφορες συσκευές.
 
-### Topics Covered
-- Push buttons and switches
-- Potentiometers and variable resistors
+### Θέματα που Καλύπτονται
+- Κουμπιά πίεσης και διακόπτες
+- Ποτενσιόμετρα και μεταβλητές αντιστάσεις
 - Joysticks
-- Keypads
-- Capacitive touch sensors
-- Pull-up and pull-down resistors
-- Debouncing techniques
+- Πληκτρολόγια (keypads)
+- Χωρητικοί αισθητήρες αφής
+- Αντιστάσεις pull-up και pull-down
+- Τεχνικές debouncing
 
-### Sample Projects
-- Button-controlled LED
-- Potentiometer-controlled LED brightness
-- Joystick control
-- Keypad input
-- Touch sensor interface
-- Multiple button handling
+### Δείγματα Έργων
+- LED ελεγχόμενο από κουμπί
+- Φωτεινότητα LED ελεγχόμενη από ποτενσιόμετρο
+- Έλεγχος joystick
+- Είσοδος πληκτρολογίου
+- Διεπαφή αισθητήρα αφής
+- Χειρισμός πολλαπλών κουμπιών
 
-### Learning Objectives
-- Read digital and analog inputs
-- Implement debouncing for reliable button presses
-- Use internal pull-up resistors
-- Handle multiple input sources
-- Create interactive user interfaces
+### Μαθησιακοί Στόχοι
+- Ανάγνωση ψηφιακών και αναλογικών εισόδων
+- Υλοποίηση debouncing για αξιόπιστα πατήματα κουμπιών
+- Χρήση εσωτερικών αντιστάσεων pull-up
+- Χειρισμός πολλαπλών πηγών εισόδου
+- Δημιουργία διαδραστικών διεπαφών χρήστη

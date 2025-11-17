@@ -1,36 +1,36 @@
 # 07_Projects
 
-## Complete Integrated Projects
+## Ολοκληρωμένα Ενσωματωμένα Έργα
 
-This folder contains complete projects that combine multiple concepts and components.
+Αυτός ο φάκελος περιέχει ολοκληρωμένα έργα που συνδυάζουν πολλαπλές έννοιες και εξαρτήματα.
 
-### Topics Covered
-- Home automation systems
-- Weather stations
-- Smart agriculture
-- Security systems
-- Robotics projects
-- Data logging and monitoring
-- Remote control systems
-- Interactive installations
+### Θέματα που Καλύπτονται
+- Συστήματα οικιακού αυτοματισμού
+- Μετεωρολογικοί σταθμοί
+- Έξυπνη γεωργία
+- Συστήματα ασφαλείας
+- Έργα ρομποτικής
+- Καταγραφή και παρακολούθηση δεδομένων
+- Συστήματα τηλεχειρισμού
+- Διαδραστικές εγκαταστάσεις
 
-### Sample Projects
-- Smart home automation system
-- Weather monitoring station
-- Plant watering system
-- Security alarm with motion detection
-- Line-following robot
-- Temperature and humidity data logger
-- Bluetooth-controlled car
-- RFID access control system
-- IoT environmental monitor
-- Voice-controlled appliances
+### Δείγματα Έργων
+- Σύστημα έξυπνου οικιακού αυτοματισμού
+- Σταθμός παρακολούθησης καιρού
+- Σύστημα ποτίσματος φυτών
+- Συναγερμός ασφαλείας με ανίχνευση κίνησης
+- Ρομπότ ακολούθησης γραμμής
+- Καταγραφέας δεδομένων θερμοκρασίας και υγρασίας
+- Αυτοκίνητο ελεγχόμενο από Bluetooth
+- Σύστημα ελέγχου πρόσβασης RFID
+- Μόνιτορ περιβάλλοντος IoT
+- Συσκευές ελεγχόμενες με φωνή
 
-### Learning Objectives
-- Integrate multiple components and concepts
-- Design complete systems from requirements
-- Implement state machines and control logic
-- Create user-friendly interfaces
-- Debug complex multi-component systems
-- Document and present projects
-- Apply best practices in IoT development
+### Μαθησιακοί Στόχοι
+- Ενσωμάτωση πολλαπλών εξαρτημάτων και εννοιών
+- Σχεδιασμός ολοκληρωμένων συστημάτων από απαιτήσεις
+- Υλοποίηση μηχανών κατάστασης και λογικής ελέγχου
+- Δημιουργία φιλικών προς το χρήστη διεπαφών
+- Αποσφαλμάτωση σύνθετων συστημάτων πολλαπλών εξαρτημάτων
+- Τεκμηρίωση και παρουσίαση έργων
+- Εφαρμογή βέλτιστων πρακτικών στην ανάπτυξη IoT

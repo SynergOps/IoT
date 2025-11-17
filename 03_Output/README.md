@@ -1,30 +1,30 @@
 # 03_Output
 
-## Output Devices and Displays
+## Συσκευές Εξόδου και Οθόνες
 
-This folder contains projects focused on controlling various output devices.
+Αυτός ο φάκελος περιέχει έργα που επικεντρώνονται στον έλεγχο διαφόρων συσκευών εξόδου.
 
-### Topics Covered
-- LEDs (single and RGB)
-- 7-segment displays
-- LCD displays (16x2, 20x4)
-- OLED displays
-- LED matrices
-- Buzzers and piezo speakers
-- PWM (Pulse Width Modulation)
+### Θέματα που Καλύπτονται
+- LED (μονά και RGB)
+- Οθόνες 7 τμημάτων
+- Οθόνες LCD (16x2, 20x4)
+- Οθόνες OLED
+- Μήτρες LED
+- Buzzers και piezo ηχεία
+- PWM (Διαμόρφωση Εύρους Παλμού)
 
-### Sample Projects
-- LED patterns and animations
-- RGB LED color mixing
-- 7-segment counter
+### Δείγματα Έργων
+- Μοτίβα και κινούμενα σχέδια LED
+- Ανάμιξη χρωμάτων RGB LED
+- Μετρητής 7 τμημάτων
 - LCD Hello World
-- OLED graphics
-- Buzzer melodies
-- LED matrix scrolling text
+- Γραφικά OLED
+- Μελωδίες buzzer
+- Κυλιόμενο κείμενο μήτρας LED
 
-### Learning Objectives
-- Control various output devices
-- Implement PWM for brightness and tone control
-- Display text and graphics on screens
-- Create visual and audio feedback
-- Manage multiple output devices simultaneously
+### Μαθησιακοί Στόχοι
+- Έλεγχος διαφόρων συσκευών εξόδου
+- Υλοποίηση PWM για έλεγχο φωτεινότητας και τόνου
+- Εμφάνιση κειμένου και γραφικών σε οθόνες
+- Δημιουργία οπτικής και ακουστικής ανατροφοδότησης
+- Διαχείριση πολλαπλών συσκευών εξόδου ταυτόχρονα

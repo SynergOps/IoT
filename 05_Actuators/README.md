@@ -1,32 +1,32 @@
 # 05_Actuators
 
-## Motors and Movement Control
+## Κινητήρες και Έλεγχος Κίνησης
 
-This folder contains projects focused on controlling motors and actuators.
+Αυτός ο φάκελος περιέχει έργα που επικεντρώνονται στον έλεγχο κινητήρων και ενεργοποιητών.
 
-### Topics Covered
-- DC motors and motor drivers (L298N, L293D)
-- Servo motors (SG90, MG995)
-- Stepper motors (28BYJ-48)
-- Relays and switching circuits
-- Solenoids
-- Motor speed control with PWM
-- Direction control (H-bridge)
+### Θέματα που Καλύπτονται
+- Κινητήρες DC και οδηγοί κινητήρων (L298N, L293D)
+- Κινητήρες servo (SG90, MG995)
+- Κινητήρες βηματισμού (28BYJ-48)
+- Ρελέ και κυκλώματα μεταγωγής
+- Σωληνοειδή
+- Έλεγχος ταχύτητας κινητήρα με PWM
+- Έλεγχος κατεύθυνσης (H-bridge)
 
-### Sample Projects
-- DC motor speed and direction control
-- Servo motor sweep and positioning
-- Stepper motor control
-- Relay-controlled appliances
-- Robot arm control
-- Line-following robot basics
-- Two-wheel drive robot
+### Δείγματα Έργων
+- Έλεγχος ταχύτητας και κατεύθυνσης κινητήρα DC
+- Σάρωση και τοποθέτηση κινητήρα servo
+- Έλεγχος κινητήρα βηματισμού
+- Συσκευές ελεγχόμενες από ρελέ
+- Έλεγχος ρομποτικού βραχίονα
+- Βασικά ρομπότ ακολούθησης γραμμής
+- Ρομπότ με κίνηση δύο τροχών
 
-### Learning Objectives
-- Control DC motors with PWM
-- Position servo motors accurately
-- Drive stepper motors for precise movement
-- Use relays to control high-power devices
-- Implement motor driver circuits
-- Create movement-based projects
-- Understand motor control techniques
+### Μαθησιακοί Στόχοι
+- Έλεγχος κινητήρων DC με PWM
+- Ακριβής τοποθέτηση κινητήρων servo
+- Οδήγηση κινητήρων βηματισμού για ακριβή κίνηση
+- Χρήση ρελέ για έλεγχο συσκευών υψηλής ισχύος
+- Υλοποίηση κυκλωμάτων οδήγησης κινητήρων
+- Δημιουργία έργων βασισμένων σε κίνηση
+- Κατανόηση τεχνικών ελέγχου κινητήρων

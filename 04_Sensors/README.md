@@ -1,33 +1,33 @@
 # 04_Sensors
 
-## Environmental and Motion Sensors
+## Περιβαλλοντικοί Αισθητήρες και Αισθητήρες Κίνησης
 
-This folder contains projects using various sensors to measure environmental conditions.
+Αυτός ο φάκελος περιέχει έργα που χρησιμοποιούν διάφορους αισθητήρες για τη μέτρηση περιβαλλοντικών συνθηκών.
 
-### Topics Covered
-- Temperature sensors (DHT11, DHT22, DS18B20, LM35)
-- Light sensors (LDR, photodiode)
-- Motion sensors (PIR, ultrasonic)
-- Distance measurement (HC-SR04)
-- Humidity sensors
-- Gas sensors (MQ series)
-- Sound sensors
-- Tilt sensors and accelerometers
+### Θέματα που Καλύπτονται
+- Αισθητήρες θερμοκρασίας (DHT11, DHT22, DS18B20, LM35)
+- Αισθητήρες φωτός (LDR, φωτοδίοδος)
+- Αισθητήρες κίνησης (PIR, υπερηχητικοί)
+- Μέτρηση απόστασης (HC-SR04)
+- Αισθητήρες υγρασίας
+- Αισθητήρες αερίων (σειρά MQ)
+- Αισθητήρες ήχου
+- Αισθητήρες κλίσης και επιταχυνσιόμετρα
 
-### Sample Projects
-- Temperature and humidity monitor
-- Light-dependent LED control
-- Motion-activated alarm
-- Distance measurement system
-- Air quality monitor
-- Sound level meter
-- Tilt detection
-- Multi-sensor data logger
+### Δείγματα Έργων
+- Μόνιτορ θερμοκρασίας και υγρασίας
+- Έλεγχος LED εξαρτώμενος από φως
+- Συναγερμός ενεργοποιούμενος από κίνηση
+- Σύστημα μέτρησης απόστασης
+- Μόνιτορ ποιότητας αέρα
+- Μετρητής στάθμης ήχου
+- Ανίχνευση κλίσης
+- Καταγραφέας δεδομένων πολλαπλών αισθητήρων
 
-### Learning Objectives
-- Interface with analog and digital sensors
-- Calibrate sensors for accurate readings
-- Process sensor data
-- Implement threshold-based actions
-- Create data logging systems
-- Combine multiple sensor inputs
+### Μαθησιακοί Στόχοι
+- Διασύνδεση με αναλογικούς και ψηφιακούς αισθητήρες
+- Βαθμονόμηση αισθητήρων για ακριβείς μετρήσεις
+- Επεξεργασία δεδομένων αισθητήρων
+- Υλοποίηση ενεργειών βασισμένων σε κατώφλια
+- Δημιουργία συστημάτων καταγραφής δεδομένων
+- Συνδυασμός εισόδων πολλαπλών αισθητήρων

@@ -1,36 +1,36 @@
 # 06_Communication
 
-## Communication Protocols and Networking
+## Πρωτόκολλα Επικοινωνίας και Δικτύωση
 
-This folder contains projects focused on communication between devices.
+Αυτός ο φάκελος περιέχει έργα που επικεντρώνονται στην επικοινωνία μεταξύ συσκευών.
 
-### Topics Covered
-- Serial communication (UART)
-- I2C protocol
-- SPI protocol
+### Θέματα που Καλύπτονται
+- Σειριακή επικοινωνία (UART)
+- Πρωτόκολλο I2C
+- Πρωτόκολλο SPI
 - Bluetooth (HC-05, HC-06)
 - WiFi (ESP8266, ESP32)
-- RF modules (nRF24L01)
-- Infrared communication
-- MQTT protocol
-- HTTP requests
+- Μονάδες RF (nRF24L01)
+- Υπέρυθρη επικοινωνία
+- Πρωτόκολλο MQTT
+- Αιτήματα HTTP
 
-### Sample Projects
-- Serial data exchange between Arduinos
-- I2C device communication
-- SPI sensor interfacing
-- Bluetooth-controlled LED
-- WiFi weather station
-- RF remote control
-- IR remote decoder
-- IoT data publishing with MQTT
-- Web server on Arduino
+### Δείγματα Έργων
+- Ανταλλαγή σειριακών δεδομένων μεταξύ Arduino
+- Επικοινωνία συσκευών I2C
+- Διασύνδεση αισθητήρων SPI
+- LED ελεγχόμενο από Bluetooth
+- Μετεωρολογικός σταθμός WiFi
+- Τηλεχειρισμός RF
+- Αποκωδικοποιητής τηλεχειριστηρίου IR
+- Δημοσίευση δεδομένων IoT με MQTT
+- Διακομιστής web σε Arduino
 
-### Learning Objectives
-- Implement various communication protocols
-- Exchange data between devices
-- Create wireless control systems
-- Connect Arduino to the internet
-- Publish sensor data to cloud platforms
-- Build IoT-enabled projects
-- Understand protocol differences and use cases
+### Μαθησιακοί Στόχοι
+- Υλοποίηση διαφόρων πρωτοκόλλων επικοινωνίας
+- Ανταλλαγή δεδομένων μεταξύ συσκευών
+- Δημιουργία ασύρματων συστημάτων ελέγχου
+- Σύνδεση Arduino στο διαδίκτυο
+- Δημοσίευση δεδομένων αισθητήρων σε πλατφόρμες cloud
+- Κατασκευή έργων με δυνατότητες IoT
+- Κατανόηση διαφορών πρωτοκόλλων και περιπτώσεων χρήσης

@@ -1,63 +1,63 @@
 # IoT
-Training material used in class while teaching IoT
+Εκπαιδευτικό υλικό που χρησιμοποιείται στην τάξη κατά τη διδασκαλία του IoT
 
-## Arduino Starter Kit - Topic-Based Learning Structure
+## Arduino Starter Kit - Δομή Μάθησης με Βάση τα Θέματα
 
-This repository contains organized learning materials based on the Arduino Starter Kit curriculum, structured by topics for progressive learning.
+Αυτό το αποθετήριο περιέχει οργανωμένο εκπαιδευτικό υλικό βασισμένο στο πρόγραμμα σπουδών του Arduino Starter Kit, δομημένο κατά θέματα για προοδευτική μάθηση.
 
-### Folder Structure
+### Δομή Φακέλων
 
 ```
-├── 01_Basics/           - Introduction to Arduino and basic concepts
-├── 02_Input/            - Input devices (buttons, potentiometers, sensors)
-├── 03_Output/           - Output devices (LEDs, displays, buzzers)
-├── 04_Sensors/          - Environmental and motion sensors
-├── 05_Actuators/        - Motors, servos, and movement control
-├── 06_Communication/    - Communication protocols (Serial, I2C, SPI, WiFi, Bluetooth)
-└── 07_Projects/         - Complete integrated projects
+├── 01_Basics/           - Εισαγωγή στο Arduino και βασικές έννοιες
+├── 02_Input/            - Συσκευές εισόδου (κουμπιά, ποτενσιόμετρα, αισθητήρες)
+├── 03_Output/           - Συσκευές εξόδου (LED, οθόνες, buzzers)
+├── 04_Sensors/          - Περιβαλλοντικοί αισθητήρες και αισθητήρες κίνησης
+├── 05_Actuators/        - Κινητήρες, servos και έλεγχος κίνησης
+├── 06_Communication/    - Πρωτόκολλα επικοινωνίας (Serial, I2C, SPI, WiFi, Bluetooth)
+└── 07_Projects/         - Ολοκληρωμένα ενσωματωμένα έργα
 ```
 
-### Learning Path
+### Μαθησιακή Διαδρομή
 
-1. **01_Basics** - Start here to learn Arduino fundamentals, programming basics, and digital/analog I/O
-2. **02_Input** - Learn to read from buttons, potentiometers, and other input devices
-3. **03_Output** - Control LEDs, displays, and create visual/audio feedback
-4. **04_Sensors** - Interface with temperature, light, motion, and other sensors
-5. **05_Actuators** - Control motors, servos, and create movement
-6. **06_Communication** - Connect devices and enable wireless communication
-7. **07_Projects** - Apply your knowledge in complete, real-world projects
+1. **01_Basics** - Ξεκινήστε εδώ για να μάθετε τα βασικά του Arduino, βασικά προγραμματισμού και ψηφιακό/αναλογικό I/O
+2. **02_Input** - Μάθετε να διαβάζετε από κουμπιά, ποτενσιόμετρα και άλλες συσκευές εισόδου
+3. **03_Output** - Ελέγξτε LED, οθόνες και δημιουργήστε οπτική/ακουστική ανατροφοδότηση
+4. **04_Sensors** - Διασυνδέστε αισθητήρες θερμοκρασίας, φωτός, κίνησης και άλλους
+5. **05_Actuators** - Ελέγξτε κινητήρες, servos και δημιουργήστε κίνηση
+6. **06_Communication** - Συνδέστε συσκευές και ενεργοποιήστε ασύρματη επικοινωνία
+7. **07_Projects** - Εφαρμόστε τις γνώσεις σας σε ολοκληρωμένα, πραγματικά έργα
 
-### Getting Started
+### Ξεκινώντας
 
-Each folder contains:
-- A README.md with topic overview and learning objectives
-- Sample project descriptions
-- Code examples and tutorials (to be added)
-- Circuit diagrams and schematics (to be added)
+Κάθε φάκελος περιέχει:
+- Ένα README.md με επισκόπηση θέματος και μαθησιακούς στόχους
+- Περιγραφές δείγματος έργων
+- Παραδείγματα κώδικα και εκπαιδευτικά προγράμματα (θα προστεθούν)
+- Διαγράμματα κυκλωμάτων και σχηματικά (θα προστεθούν)
 
-### Prerequisites
+### Προαπαιτούμενα
 
-- Arduino IDE installed ([Download here](https://www.arduino.cc/en/software))
-- Arduino board (Uno, Nano, Mega, or compatible)
-- Arduino Starter Kit or compatible components
-- Basic understanding of electronics (helpful but not required)
+- Εγκατεστημένο Arduino IDE ([Λήψη εδώ](https://www.arduino.cc/en/software))
+- Πλακέτα Arduino (Uno, Nano, Mega ή συμβατή)
+- Arduino Starter Kit ή συμβατά εξαρτήματα
+- Βασική κατανόηση ηλεκτρονικών (χρήσιμη αλλά όχι απαραίτητη)
 
-### Contributing
+### Συνεισφορά
 
-Feel free to contribute by adding:
-- Code examples
-- Circuit diagrams
-- Project documentation
-- Tutorials and guides
-- Bug fixes and improvements
+Μη διστάσετε να συνεισφέρετε προσθέτοντας:
+- Παραδείγματα κώδικα
+- Διαγράμματα κυκλωμάτων
+- Τεκμηρίωση έργου
+- Εκπαιδευτικά προγράμματα και οδηγούς
+- Διορθώσεις σφαλμάτων και βελτιώσεις
 
-### Resources
+### Πόροι
 
-- [Arduino Official Documentation](https://www.arduino.cc/reference/en/)
-- [Arduino Starter Kit Projects](https://www.arduino.cc/en/Guide/StarterKit)
-- [Arduino Forum](https://forum.arduino.cc/)
-- [Tinkercad Circuits](https://www.tinkercad.com/circuits) - For virtual testing
+- [Επίσημη Τεκμηρίωση Arduino](https://www.arduino.cc/reference/en/)
+- [Έργα Arduino Starter Kit](https://www.arduino.cc/en/Guide/StarterKit)
+- [Φόρουμ Arduino](https://forum.arduino.cc/)
+- [Tinkercad Circuits](https://www.tinkercad.com/circuits) - Για εικονική δοκιμή
 
-### License
+### Άδεια
 
-See LICENSE file for details.
+Δείτε το αρχείο LICENSE για λεπτομέρειες.
