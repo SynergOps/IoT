@@ -9,10 +9,17 @@ void setup(){
 }
 
 void loop(){
-	unsigned long now = millis();
-	if (now - last >= period) {
-		last = now;
-		state = !state;
-		digitalWrite(LED, state ? HIGH : LOW);
+	unsigned long now = millis(); // Τι ώρα είναι ΤΩΡΑ;
+	
+	if (now - last >= period) { // Έχει περάσει αρκετός χρόνος;
+		last = now; // Θυμήσου την τωρινή ώρα
+		state = !state; // Άλλαξε κατάσταση (toggle)
+		
+		// Άναψε ή σβήσε το LED ανάλογα με την κατάσταση
+		if (state) {
+			digitalWrite(LED, HIGH);  // Άναψε
+		} else {
+			digitalWrite(LED, LOW);   // Σβήσε
+		}
 	}
 }
