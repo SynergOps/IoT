@@ -63,30 +63,42 @@ Power Rails:          Internal Connections:
 Κάθε έργο βρίσκεται σε δικό του υποφάκελο με αναλυτικό README, σχεδιάγραμμα κυκλώματος και sketch.
 
 ### 📁 [01_Blink](./01_Blink/) - Hello World
-**Το πρώτο σας πρόγραμμα!** Αναβοσβήνει το ενσωματωμένο LED του arduino board, κάθε 500ms.
+**Το πρώτο σας πρόγραμμα!** Αναβοσβήνει το ενσωματωμένο LED κάθε 500ms.
 - ⚡ Δυσκολία: Αρχάριοι
 - 🔧 Υλικά: Μόνο Arduino + USB
 - 📚 Μαθαίνετε: `setup()`, `loop()`, `digitalWrite()`, `delay()`
 
-### 📁 [02_Digital_IO](./02_Digital_IO/) - Κουμπί & LED
+### 📁 [02_Blink_SOS](./02_Blink_SOS/) - Σήμα Κινδύνου SOS
+**Morse code στην πράξη!** Εκπέμπει το διεθνές σήμα κινδύνου SOS (··· ─── ···).
+- ⚡ Δυσκολία: Αρχάριοι
+- 🔧 Υλικά: Μόνο Arduino + USB
+- 📚 Μαθαίνετε: Συναρτήσεις, patterns, sequences, επικοινωνία με φως
+
+### 📁 [03_Blink_SOS_Serial](./03_Blink_SOS_Serial/) - SOS με Serial Debug
+**Morse code + Serial Monitor!** Το ίδιο σήμα SOS αλλά με εκτύπωση στο Serial Monitor για debugging.
+- ⚡ Δυσκολία: Αρχάριοι
+- 🔧 Υλικά: Μόνο Arduino + USB
+- 📚 Μαθαίνετε: `Serial.print()`, debugging, ταυτόχρονη έξοδος LED & Serial
+
+### 📁 [04_Digital_IO](./04_Digital_IO/) - Κουμπί & LED
 Διαβάζει κουμπί και ελέγχει LED. Εισαγωγή στο digital input/output.
 - ⚡ Δυσκολία: Αρχάριοι
 - 🔧 Υλικά: Arduino, κουμπί, 2× jumpers
 - 📚 Μαθαίνετε: `digitalRead()`, `INPUT_PULLUP`, button logic
 
-### 📁 [03_Millis_Timing](./03_Millis_Timing/) - Μη-αποκλειστικός Χρονισμός (Non-blocking)
+### 📁 [05_Millis_Timing](./05_Millis_Timing/) - Μη-αποκλειστικός Χρονισμός (Non-blocking)
 Blink χωρίς `delay()` χρησιμοποιώντας `millis()`. Κλειδί για πολύπλοκα προγράμματα!
 - ⚡ Δυσκολία: Μεσαίοι
 - 🔧 Υλικά: Μόνο Arduino + USB
 - 📚 Μαθαίνετε: `millis()`, non-blocking code, multiple timers
 
-### 📁 [04_PWM_Fade](./04_PWM_Fade/) - Ομαλή Μεταβολή Φωτεινότητας
+### 📁 [06_PWM_Fade](./06_PWM_Fade/) - Ομαλή Μεταβολή Φωτεινότητας
 Fade effect με PWM. Έλεγχος φωτεινότητας LED.
 - ⚡ Δυσκολία: Μεσαίοι
 - 🔧 Υλικά: Arduino, LED, αντίσταση 220Ω, jumpers
 - 📚 Μαθαίνετε: `analogWrite()`, PWM, for loops
 
-### 📁 [05_Serial_Communication](./05_Serial_Communication/) - Σειριακή Επικοινωνία
+### 📁 [07_Serial_Communication](./07_Serial_Communication/) - Σειριακή Επικοινωνία
 Έλεγχος LED από τον υπολογιστή μέσω Serial Monitor. Debugging & διαδραστικότητα.
 - ⚡ Δυσκολία: Μεσαίοι
 - 🔧 Υλικά: Arduino + USB
@@ -101,10 +113,12 @@ Fade effect με PWM. Έλεγχος φωτεινότητας LED.
 | Έργο | Βασική Έννοια | Εντολές Κλειδιά |
 |------|---------------|-----------------|
 | **01_Blink** | Δομή προγράμματος | `pinMode()`, `digitalWrite()`, `delay()` |
-| **02_Digital_IO** | Input/Output | `digitalRead()`, `INPUT_PULLUP` |
-| **03_Millis_Timing** | Χρονισμός | `millis()`, non-blocking |
-| **04_PWM_Fade** | Αναλογικό output | `analogWrite()`, PWM |
-| **05_Serial_Communication** | Επικοινωνία | `Serial.begin()`, `Serial.read()` |
+| **02_Blink_SOS** | Συναρτήσεις & Patterns | `dot()`, `dash()`, sequences |
+| **03_Blink_SOS_Serial** | Serial Debug + Morse | `Serial.print()`, `dot()`, `dash()` |
+| **04_Digital_IO** | Input/Output | `digitalRead()`, `INPUT_PULLUP` |
+| **05_Millis_Timing** | Χρονισμός | `millis()`, non-blocking |
+| **06_PWM_Fade** | Αναλογικό output | `analogWrite()`, PWM |
+| **07_Serial_Communication** | Επικοινωνία | `Serial.begin()`, `Serial.read()` |
 
 ---
 
@@ -251,15 +265,15 @@ analogWrite(9, 128); // Output (PWM): D3,5,6,9,10,11 → 0-255
 ### 🔢 Προτεινόμενη Σειρά
 Ακολουθήστε τα έργα με τη σειρά:
 ```
-01_Blink → 02_Digital_IO → 03_Millis_Timing → 04_PWM_Fade → 05_Serial_Communication
+01_Blink → 02_Blink_SOS → 03_Blink_SOS_Serial → 04_Digital_IO → 05_Millis_Timing → 06_PWM_Fade → 07_Serial_Communication
 ```
 
 Κάθε έργο χτίζει πάνω στις έννοιες του προηγούμενου.
 
 ### ⏱️ Εκτιμώμενος Χρόνος
 - Κάθε έργο: 30-60 λεπτά
-- Συνολικό module: 3-5 ώρες
-- Με πειραματισμό: 6-10 ώρες
+- Συνολικό module: 4-6 ώρες
+- Με πειραματισμό: 7-12 ώρες
 
 ---
 
