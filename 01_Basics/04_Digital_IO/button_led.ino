@@ -7,6 +7,9 @@ void setup() {
 }
 
 void loop() {
-	bool pressed = (digitalRead(BTN) == LOW);
-	digitalWrite(LED_BUILTIN, pressed ? HIGH : LOW);
+    if (digitalRead(BTN) == LOW) {
+        digitalWrite(LED_BUILTIN, HIGH);
+    } else {
+        digitalWrite(LED_BUILTIN, LOW);
+    }
 }

@@ -8,6 +8,7 @@
 - Χρήση `INPUT_PULLUP` (εσωτερική αντίσταση pull-up)
 - Λογική αντιστροφής (πατημένο = LOW)
 - Συνδυασμός input και output
+- **Κατανόηση if/else δομής ελέγχου**
 
 ## Σχεδιάγραμμα Κυκλώματος
 
@@ -15,7 +16,7 @@
            ┌─────────────────┐
            │   Arduino Uno   │
            │                 │
-  ┌────────┤ D2 (INPUT_PULLUP│
+  ┌────────┤ D2(INPUT_PULLUP)│
   │        │                 │
   │        │  D13 (Built-in) ├──► LED εσωτερικό
   │        │                 │
@@ -30,7 +31,7 @@
 - 1× Arduino Uno
 - 1× Κουμπί (Push Button / Tactile Switch)
 - 2× Καλώδια jumper (αρσενικό-αρσενικό)
-- 1× Breadboard (προαιρετικά για σταθερότητα)
+- 1× Breadboard
 
 ## Οδηγίες Σύνδεσης
 
@@ -61,15 +62,24 @@ void setup() {
 }
 
 void loop() {
-  bool pressed = (digitalRead(BTN) == LOW);  // LOW = πατημένο
-  digitalWrite(LED_BUILTIN, pressed ? HIGH : LOW);
+  // Διάβασε την κατάσταση του κουμπιού
+  int buttonState = digitalRead(BTN);
+  
+  // Έλεγχος: Είναι το κουμπί πατημένο;
+  if (buttonState == LOW) {
+    // ✅ ΝΑΙ - Κουμπί ΠΑΤΗΜΕΝΟ → Άναψε το LED
+    digitalWrite(LED_BUILTIN, HIGH);
+  } else {
+    // ❌ ΟΧΙ - Κουμπί ΑΦΗΜΕΝΟ → Σβήσε το LED
+    digitalWrite(LED_BUILTIN, LOW);
+  }
 }
 ```
 
 **Βασικές Έννοιες:**
 - `INPUT_PULLUP`: Ενεργοποιεί εσωτερική αντίσταση ~20kΩ
 - `digitalRead(BTN)`: Διαβάζει HIGH ή LOW από το pin
-- Τριαδικός τελεστής: `condition ? true_value : false_value`
+- **`if/else`**: Δομή απόφασης - "Αν συμβαίνει κάτι, κάνε αυτό, αλλιώς κάνε κάτι άλλο"
 
 ## Troubleshooting
 
@@ -79,17 +89,177 @@ void loop() {
 | LED πάντα αναμμένο | Κουμπί μπορεί να είναι βραχυκυκλωμένο ή ελαττωματικό |
 | Ασταθής συμπεριφορά | Προσθέστε debouncing (δείτε παρακάτω) |
 
+---
+
+## Ροή Εκτέλεσης (Control Flow)
+
+### Διάγραμμα Ροής (Flowchart)
+
+```
+┌────────────────────────┐
+│   Έναρξη Loop()        │
+└───────────┬────────────┘
+            │
+            ▼
+┌────────────────────────────────────┐
+│ buttonState = digitalRead(BTN)     │
+│ (Διάβασε την κατάσταση του κουμπιού)
+└───────────┬────────────────────────┘
+            │
+            ▼
+     ┌──────────────────┐
+     │ if (buttonState  │
+     │    == LOW) ?     │
+     └──┬─────────┬─────┘
+    YES│         │NO
+       ▼         ▼
+  ┌────────┐ ┌──────────┐
+  │HIGH=ON │ │ LOW=OFF  │
+  └────┬───┘ └──────┬───┘
+       │            │
+       └────┬───────┘
+            ▼
+   ┌─────────────────┐
+   │ Επόμενο Loop    │
+   │ (επανάληψη)     │
+   └─────────────────┘
+```
+
+### Πίνακας Αποφάσεων
+
+| Κατάσταση | `buttonState` | Συνθήκη `== LOW` | Αποτέλεσμα | LED |
+|-----------|---------------|-----------------|-----------|-----|
+| Κουμπί ΑΦΗΜΕΝΟ | HIGH | FALSE ❌ | else block | OFF 🔴 |
+| Κουμπί ΠΑΤΗΜΕΝΟ | LOW | TRUE ✅ | if block | ON 🟢 |
+
+### Σεναριακή Εκτέλεση
+
+```
+⏱️ Χρονική Στιγμή 1: Κουμπί ΑΦΗΜΕΝΟ
+├─ buttonState = digitalRead(2) → HIGH
+├─ if (HIGH == LOW) → FALSE ❌
+├─ else block εκτελείται
+└─ LED = OFF 🔴
+
+⏱️ Χρονική Στιγμή 2: ΠΑΤΑΜΕ το κουμπί
+├─ buttonState = digitalRead(2) → LOW
+├─ if (LOW == LOW) → TRUE ✅
+├─ if block εκτελείται
+└─ LED = ON 🟢
+
+⏱️ Χρονική Στιγμή 3: ΞΑΝΑ ΑΦΗΜΕΝΟ
+├─ buttonState = digitalRead(2) → HIGH
+├─ if (HIGH == LOW) → FALSE ❌
+├─ else block εκτελείται
+└─ LED = OFF 🔴
+
+⏱️ Χρονική Στιγμή 4: Επανάληψη...
+```
+
+---
+
+## Κατανόηση if/else
+
+### Γενική Σύνταξη
+
+```cpp
+if (condition) {
+  // Κώδικας που εκτελείται ΑΝ η συνθήκη είναι TRUE
+  // (αν η συνθήκη ισχύει)
+} else {
+  // Κώδικας που εκτελείται ΑΝ η συνθήκη είναι FALSE
+  // (αν η συνθήκη δεν ισχύει)
+}
+```
+
+### Παραδείγματα Συνθηκών
+
+```cpp
+// Σύγκρισης (Comparison)
+if (age > 18) { }           // Μεγαλύτερο από
+if (temperature < 0) { }    // Μικρότερο από
+if (value == 5) { }         // Ίσο με
+if (pin != HIGH) { }        // Όχι ίσο με
+
+// Λογικές (Logical)
+if (btn == LOW && sensor > 500) { }   // ΚΑΙ (AND)
+if (btn == LOW || sensor > 500) { }   // Ή (OR)
+if (!pressed) { }                      // ΟΧΙ (NOT)
+```
+
+### Παράδειγμα: Θερμοκρασία
+
+```cpp
+int temp = analogRead(A0);
+
+if (temp > 30) {
+  Serial.println("Πολύ ζεστά!");
+  digitalWrite(LED_RED, HIGH);
+} else {
+  Serial.println("Κανονική θερμοκρασία.");
+  digitalWrite(LED_RED, LOW);
+}
+```
+
+---
+
 ## Πειραματισμός
 
-1. **Αντιστροφή Λογικής**: Αλλάξτε `pressed ? HIGH : LOW` σε `pressed ? LOW : HIGH`
-2. **Πολλαπλά Κουμπιά**: Προσθέστε δεύτερο κουμπί στο D3 για δεύτερο LED
+1. **Αντιστροφή Λογικής**: Αλλάξτε την συνθήκη:
+   ```cpp
+   if (buttonState == HIGH) {  // Αναποδογυρισμένη λογική
+     digitalWrite(LED_BUILTIN, HIGH);
+   } else {
+     digitalWrite(LED_BUILTIN, LOW);
+   }
+   ```
+
+2. **Πολλαπλά Κουμπιά**: Προσθέστε δεύτερο κουμπί και LED:
+   ```cpp
+   const int BTN2 = 3;
+   
+   void setup() {
+     pinMode(BTN, INPUT_PULLUP);
+     pinMode(BTN2, INPUT_PULLUP);
+     pinMode(LED_BUILTIN, OUTPUT);
+     pinMode(12, OUTPUT);
+   }
+   
+   void loop() {
+     if (digitalRead(BTN) == LOW) {
+       digitalWrite(LED_BUILTIN, HIGH);
+     } else {
+       digitalWrite(LED_BUILTIN, LOW);
+     }
+     
+     if (digitalRead(BTN2) == LOW) {
+       digitalWrite(12, HIGH);
+     } else {
+       digitalWrite(12, LOW);
+     }
+   }
+   ```
+
 3. **Debouncing**: Προσθέστε μικρή καθυστέρηση για σταθερότερες αναγνώσεις:
    ```cpp
-   if (digitalRead(BTN) == LOW) {
-     delay(50);  // Debounce
+   void loop() {
      if (digitalRead(BTN) == LOW) {
-       // Κουμπί όντως πατημένο
+       delay(50);  // Debounce - περίμενε 50ms
+       if (digitalRead(BTN) == LOW) {
+         // Κουμπί όντως πατημένο
+         digitalWrite(LED_BUILTIN, HIGH);
+       }
+     } else {
+       digitalWrite(LED_BUILTIN, LOW);
      }
+   }
+   ```
+
+4. **Σύνθετες Συνθήκες**: Χρησιμοποιήστε AND/OR:
+   ```cpp
+   if (digitalRead(BTN) == LOW && analogRead(A0) > 500) {
+     // Και κουμπί πατημένο ΚΑΙ φως μεγάλο
+     digitalWrite(LED_BUILTIN, HIGH);
    }
    ```
 
