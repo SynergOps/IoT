@@ -1,0 +1,179 @@
+# 04 - PWM Fade (Ομαλή Μεταβολή Φωτεινότητας)
+
+## Περιγραφή
+Χρησιμοποιεί PWM (Pulse Width Modulation) για να μεταβάλλει σταδιακά τη φωτεινότητα ενός LED από σβηστό σε πλήρη φωτεινότητα και πίσω.
+
+## Μαθησιακοί Στόχοι
+- Κατανόηση PWM (Pulse Width Modulation)
+- Χρήση `analogWrite()` για έλεγχο φωτεινότητας
+- Διάκριση PWM pins από απλά digital pins
+- Loops με for για σταδιακές αλλαγές
+
+## Σχεδιάγραμμα Κυκλώματος
+
+```
+           ┌─────────────────┐
+           │   Arduino Uno   │
+           │                 │
+           │      D9 (~)     ├────┐
+           │                 │    │
+           │      GND        ├──┐ │
+           └─────────────────┘  │ │
+                                │ │
+                              ┌─┴─┴─┐
+                    220Ω      │ R   │
+                    ┌─────────┤     │
+                    │         └─────┘
+                    │
+                 ───▼───  LED (κόκκινο/πράσινο)
+                 ───────  (Anode +)
+                    │
+                    │     (Cathode -)
+                    └──────────► GND
+```
+
+## Υλικά που Χρειάζονται
+- 1× Arduino Uno
+- 1× LED (οποιοδήποτε χρώμα)
+- 1× Αντίσταση 220Ω (κόκκινο-κόκκινο-καφέ)
+- 2× Καλώδια jumper
+- 1× Breadboard
+
+## Τι είναι το PWM;
+
+**PWM (Pulse Width Modulation)** = Διαμόρφωση Εύρους Παλμού
+
+```
+analogWrite(pin, 0):     ________  0% duty cycle   → 0V μέσος όρος
+analogWrite(pin, 64):    ▔▁▔▁▔▁▔▁  25% duty cycle  → 1.25V
+analogWrite(pin, 128):   ▔▔▁▁▔▔▁▁  50% duty cycle  → 2.5V
+analogWrite(pin, 192):   ▔▔▔▁▔▔▔▁  75% duty cycle  → 3.75V
+analogWrite(pin, 255):   ▔▔▔▔▔▔▔▔  100% duty cycle → 5V
+```
+
+**Στο Uno, μόνο τα pins με ~ μπορούν να κάνουν PWM:**
+- D3, D5, D6, D9, D10, D11
+
+## Οδηγίες Σύνδεσης
+
+### Βήμα προς Βήμα:
+1. Τοποθετήστε το LED στο breadboard
+2. Προσδιορίστε την πολικότητα:
+   - **Μακρύ πόδι (Anode +)** → συνδέεται στην αντίσταση
+   - **Κοντό πόδι (Cathode -)** → συνδέεται στο GND
+3. Συνδέστε την αντίσταση 220Ω από το anode στο **D9**
+4. Συνδέστε το cathode στο **GND**
+
+### ⚠️ Προσοχή:
+- Πάντα χρησιμοποιείτε αντίσταση με LED (220Ω-330Ω)
+- Χωρίς αντίσταση → LED καίγεται! 🔥
+- Λάθος πολικότητα → LED δεν ανάβει
+
+## Πώς να το Τρέξετε
+
+1. Ανοίξτε το `pwm_fade.ino`
+2. Ανεβάστε στο Arduino
+3. Το LED θα fade σταδιακά πάνω-κάτω σε loop
+
+## Επεξήγηση Κώδικα
+
+```cpp
+const int PWM_LED = 9;  // PWM pin (πρέπει να έχει ~)
+
+void setup(){
+  pinMode(PWM_LED, OUTPUT);
+}
+
+void loop(){
+  // Fade up: 0 → 255
+  for (int v = 0; v <= 255; v++) {
+    analogWrite(PWM_LED, v);
+    delay(5);  // 5ms ανά βήμα = ομαλό fade
+  }
+  
+  // Fade down: 255 → 0
+  for (int v = 255; v >= 0; v--) {
+    analogWrite(PWM_LED, v);
+    delay(5);
+  }
+}
+```
+
+### Βασικές Εντολές:
+- **analogWrite(pin, value)**: PWM output (0-255)
+  - `0` = εντελώς σβηστό
+  - `255` = πλήρης φωτεινότητα
+- **for loop**: Επαναλαμβάνει με αυξανόμενη/μειούμενη μεταβλητή
+
+## Πειραματισμός
+
+### 1. Αλλαγή Ταχύτητας Fade:
+```cpp
+delay(10);   // Πιο αργό fade
+delay(1);    // Πιο γρήγορο fade
+```
+
+### 2. Διαφορετικά Μοτίβα:
+```cpp
+// Pulse effect
+analogWrite(PWM_LED, 128);  // Σταθερό 50% φωτεινότητα
+delay(100);
+analogWrite(PWM_LED, 255);  // Flash
+delay(50);
+```
+
+### 3. RGB LED (προχωρημένο):
+```cpp
+// Χρειάζονται 3 PWM pins (π.χ. D9, D10, D11)
+analogWrite(9, 255);   // Κόκκινο
+analogWrite(10, 0);    // Πράσινο
+analogWrite(11, 128);  // Μπλε → Μωβ
+```
+
+### 4. Μη-αποκλειστικό Fade με millis():
+```cpp
+// Συνδυασμός PWM + millis() για fade χωρίς delay()
+unsigned long lastUpdate = 0;
+int brightness = 0;
+int fadeAmount = 1;
+
+void loop() {
+  if (millis() - lastUpdate >= 5) {
+    lastUpdate = millis();
+    brightness += fadeAmount;
+    
+    if (brightness <= 0 || brightness >= 255) {
+      fadeAmount = -fadeAmount;  // Αντιστροφή κατεύθυνσης
+    }
+    
+    analogWrite(PWM_LED, brightness);
+  }
+}
+```
+
+## Troubleshooting
+
+| Πρόβλημα | Λύση |
+|----------|------|
+| LED δεν ανάβει | Ελέγξτε πολικότητα, αντίσταση, PWM pin (~) |
+| LED αναβοσβήνει αντί να fade | Φυσιολογικό σε χαμηλές τιμές, δοκιμάστε 30-255 |
+| Καμμένο LED | Ξεχάσατε την αντίσταση - αντικαταστήστε LED |
+| Fade δεν λειτουργεί | Σιγουρευτείτε ότι χρησιμοποιείτε PWM pin |
+
+## Σημαντικές Διευκρινίσεις
+
+### analogWrite() ≠ Πραγματικό Αναλογικό
+- Το Arduino Uno **δεν έχει DAC** (Digital-to-Analog Converter)
+- To `analogWrite()` είναι **PWM**, όχι πραγματική αναλογική τάση
+- Η συχνότητα PWM είναι ~490Hz (ορατό σε αργή κάμερα)
+
+### analogRead() vs analogWrite()
+```cpp
+analogRead(A0);         // Διάβασμα από analog pin (A0-A5) → 0-1023
+analogWrite(9, 128);    // Εγγραφή PWM σε PWM pin (D3,5,6,9,10,11) → 0-255
+```
+
+**Προσοχή:** Δεν μπορείτε να κάνετε `analogWrite()` στα A0-A5!
+
+## Επόμενο Βήμα
+Μάθετε **05_Serial_Communication** για debugging και έλεγχο από υπολογιστή.
