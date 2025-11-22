@@ -1,1 +1,12 @@
-01_Basics/.DS_Store
+# macOS
+.DS_Store
+
+# Arduino IDE - Compiled files and builds
+build/
+*.elf
+*.hex
+*.bin
+*.lock
+
+# VS Code
+.vscode/
