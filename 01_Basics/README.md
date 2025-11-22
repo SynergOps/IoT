@@ -273,7 +273,7 @@ analogWrite(9, 128); // Output (PWM): D3,5,6,9,10,11 → 0-255
 ### 🔢 Προτεινόμενη Σειρά
 Ακολουθήστε τα έργα με τη σειρά:
 ```
-01_Blink → 02_Blink_SOS → 03_Blink_SOS_Serial → 04_Digital_IO → 05_Millis_Timing → 06_PWM_Fade → 07_Serial_Communication
+01_Blink → 02_Blink_SOS → 03_Blink_SOS_Serial → 04_Digital_IO → 05_Millis_Timing → 06_PWM_Fade → 07_Serial_Communication → 08_Basics_Capstone
 ```
 
 Κάθε έργο χτίζει πάνω στις έννοιες του προηγούμενου.

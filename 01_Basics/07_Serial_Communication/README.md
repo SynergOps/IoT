@@ -250,11 +250,8 @@ void loop() {
 }
 ```
 
-## Επόμενα Βήματα
+## Επόμενο Βήμα
 
-Τώρα που γνωρίζετε τα βασικά, μπορείτε να προχωρήσετε σε:
-- **02_Input:** Αισθητήρες (potentiometer, photoresistor, κτλ)
-- **03_Output:** Servos, motors, buzzers
-- **06_Communication:** I2C, SPI, Bluetooth, WiFi
+Τώρα που γνωρίζετε τα βασικά, ήρθε η ώρα να τα συνδυάσετε όλα μαζί!
 
-**Συγχαρητήρια!** Ολοκληρώσατε τα 01_Basics! 🎉
+Προχωρήστε στο **[08_Basics_Capstone](../08_Basics_Capstone/)** για το τελικό project αυτής της ενότητας.
