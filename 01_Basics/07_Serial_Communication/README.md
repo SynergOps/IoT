@@ -58,26 +58,20 @@ Arduino        USB         Computer
 
 ## Επεξήγηση Κώδικα
 
-```cpp
-void setup(){
-  pinMode(LED_BUILTIN, OUTPUT);
-  Serial.begin(9600);  // Εκκίνηση σειριακής στα 9600 baud
-  Serial.println("Ready. Send 1/0 to toggle LED.");
-}
+Το σημαντικό κομμάτι είναι πώς διαβάζουμε και αντιδρούμε στις εντολές:
 
-void loop(){
-  if (Serial.available()) {        // Υπάρχουν δεδομένα;
-    char c = Serial.read();        // Διάβασε 1 χαρακτήρα
-    
-    if (c == '1') {
-      digitalWrite(LED_BUILTIN, HIGH);
-      Serial.println("LED ON");
-    }
-    
-    if (c == '0') {
-      digitalWrite(LED_BUILTIN, LOW);
-      Serial.println("LED OFF");
-    }
+```cpp
+if (Serial.available()) {        // 1. Υπάρχουν δεδομένα στη σειρά;
+  char c = Serial.read();        // 2. Διάβασε τον επόμενο χαρακτήρα
+  
+  if (c == '1') {                // 3. Αν είναι '1', άναψε το LED
+    digitalWrite(LED_BUILTIN, HIGH);
+    Serial.println("LED ON");
+  }
+  
+  if (c == '0') {                // 4. Αν είναι '0', σβήσε το LED
+    digitalWrite(LED_BUILTIN, LOW);
+    Serial.println("LED OFF");
   }
 }
 ```

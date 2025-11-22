@@ -70,33 +70,26 @@
 
 ## Επεξήγηση Κώδικα
 
+Εστιάζουμε στη λογική ελέγχου μέσα στο `loop()`:
+
 ```cpp
-const int BTN = 2;  // Το κουμπί στο pin 2
+// Διάβασε την κατάσταση του κουμπιού (HIGH ή LOW)
+int buttonState = digitalRead(BTN);
 
-void setup() {
-  pinMode(BTN, INPUT_PULLUP);      // Ενεργοποίηση εσωτερικής pull-up
-  pinMode(LED_BUILTIN, OUTPUT);    // LED ως έξοδος
-}
-
-void loop() {
-  // Διάβασε την κατάσταση του κουμπιού
-  int buttonState = digitalRead(BTN);
-  
-  // Έλεγχος: Είναι το κουμπί πατημένο;
-  if (buttonState == LOW) {
-    // ✅ ΝΑΙ - Κουμπί ΠΑΤΗΜΕΝΟ → Άναψε το LED
-    digitalWrite(LED_BUILTIN, HIGH);
-  } else {
-    // ❌ ΟΧΙ - Κουμπί ΑΦΗΜΕΝΟ → Σβήσε το LED
-    digitalWrite(LED_BUILTIN, LOW);
-  }
+// Έλεγχος: Είναι το κουμπί πατημένο;
+if (buttonState == LOW) {
+  // ✅ ΝΑΙ - Κουμπί ΠΑΤΗΜΕΝΟ (GND) → Άναψε το LED
+  digitalWrite(LED_BUILTIN, HIGH);
+} else {
+  // ❌ ΟΧΙ - Κουμπί ΑΦΗΜΕΝΟ (5V) → Σβήσε το LED
+  digitalWrite(LED_BUILTIN, LOW);
 }
 ```
 
 **Βασικές Έννοιες:**
-- `INPUT_PULLUP`: Ενεργοποιεί εσωτερική αντίσταση ~20kΩ
-- `digitalRead(BTN)`: Διαβάζει HIGH ή LOW από το pin
-- **`if/else`**: Δομή απόφασης - "Αν συμβαίνει κάτι, κάνε αυτό, αλλιώς κάνε κάτι άλλο"
+- `INPUT_PULLUP`: Ενεργοποιεί εσωτερική αντίσταση ~20kΩ (στο `setup()`)
+- `digitalRead(BTN)`: Διαβάζει την τάση στο pin
+- **`if/else`**: Δομή απόφασης - "Αν το κουμπί είναι πατημένο, κάνε αυτό, αλλιώς κάνε εκείνο"
 
 ## Troubleshooting
 
