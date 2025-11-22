@@ -1,57 +1,83 @@
-// SOS Morse Code: ... --- ... (3 κοντά, 3 μακριά, 3 κοντά)
-// Διεθνές σήμα κινδύνου
+/*
+  SOS Morse Code
 
-const int LED = LED_BUILTIN;  // Pin 13 (ενσωματωμένο LED)
+  Εκπέμπει το διεθνές σήμα κινδύνου SOS (... --- ...) χρησιμοποιώντας κώδικα Morse.
+
+  Βασικές Έννοιες:
+  1. **Μεταβλητές:** Χρήση μεταβλητών για τους χρόνους, ώστε να αλλάζουμε την ταχύτητα εύκολα από ένα σημείο.
+  2. **Συναρτήσεις (Functions):** Δημιουργία δικών μας εντολών (dot, dash) για να κάνουμε τον κώδικα πιο καθαρό και επαναχρησιμοποιήσιμο.
+  3. **Αλγόριθμος:** Η σειρά εκτέλεσης των εντολών για να παραχθεί το επιθυμητό μήνυμα.
+*/
+
+const int LED = LED_BUILTIN; // Pin 13 (ενσωματωμένο LED)
 
 // Χρονισμοί Morse (σε milliseconds)
-int DOT_DURATION = 200;        // Τελεία: 200ms
-int DASH_DURATION = 600;       // Παύλα: 600ms (3× τελεία)
-int SYMBOL_SPACE = 200;        // Διάστημα μεταξύ . και -
-int LETTER_SPACE = 600;        // Διάστημα μεταξύ S-O-S
-int WORD_SPACE = 1400;         // Παύση πριν επαναλάβει
+// Αλλάζοντας αυτές τις τιμές, αλλάζει ο ρυθμός όλου του μηνύματος
+const int DOT_DURATION = 200;  // Τελεία: Η βασική μονάδα χρόνου
+const int DASH_DURATION = 600; // Παύλα: 3 φορές η διάρκεια της τελείας
+const int SYMBOL_SPACE = 200;  // Διάστημα μεταξύ συμβόλων (ίσο με τελεία)
+const int LETTER_SPACE = 600;  // Διάστημα μεταξύ γραμμάτων (3 φορές η τελεία)
+const int WORD_SPACE = 1400;   // Παύση πριν επαναλάβει (7 φορές η τελεία)
 
-void setup() {
+void setup()
+{
   pinMode(LED, OUTPUT);
-  // Μικρή αρχική καθυστέρηση
+  // Μικρή αρχική καθυστέρηση για να προλάβουμε να δούμε την αρχή
   delay(1000);
 }
 
+// --- Βοηθητικές Συναρτήσεις ---
+
 // Συνάρτηση για τελεία (.)
-void dot() {
+// Ανάβει το LED για σύντομο χρονικό διάστημα
+void dot()
+{
   digitalWrite(LED, HIGH);
   delay(DOT_DURATION);
   digitalWrite(LED, LOW);
-  delay(SYMBOL_SPACE);
+  delay(SYMBOL_SPACE); // Κενό μετά το σύμβολο
 }
 
 // Συνάρτηση για παύλα (-)
-void dash() {
+// Ανάβει το LED για μεγαλύτερο χρονικό διάστημα
+void dash()
+{
   digitalWrite(LED, HIGH);
   delay(DASH_DURATION);
   digitalWrite(LED, LOW);
-  delay(SYMBOL_SPACE);
+  delay(SYMBOL_SPACE); // Κενό μετά το σύμβολο
 }
 
+// --- Κύριος Βρόχος ---
 
-void loop() {
+void loop()
+{
   // S: ... (3 τελείες)
   dot();
   dot();
   dot();
-  delay(LETTER_SPACE);
-  
+  delay(LETTER_SPACE); // Κενό μεταξύ γραμμάτων
+
   // O: --- (3 παύλες)
   dash();
   dash();
   dash();
-  delay(LETTER_SPACE);
-  
+  delay(LETTER_SPACE); // Κενό μεταξύ γραμμάτων
+
   // S: ... (3 τελείες)
   dot();
   dot();
   dot();
-  
-  // Παύση πριν επαναλάβει το SOS
+
+  // Μεγάλη παύση πριν ξαναρχίσει το μήνυμα
   delay(WORD_SPACE);
 }
 
+// S: ... (3 τελείες)
+dot();
+dot();
+dot();
+
+// Παύση πριν επαναλάβει το SOS
+delay(WORD_SPACE);
+}

@@ -54,7 +54,7 @@ Power Rails:          Internal Connections:
                         └─────────┴─────────┘
 ```
 - Κάθε σειρά a έως e και f έως j συνδέονται εσωτρικά, οριζόντια
-- Οι κάθετες ράγες (+/-) συνδέονται εσωτρικά εσωτρικά κάθετα
+- Οι κάθετες ράγες (+/-) συνδέονται εσωτερικά κάθετα
 
 ---
 
@@ -104,6 +104,12 @@ Fade effect με PWM. Έλεγχος φωτεινότητας LED.
 - 🔧 Υλικά: Arduino + USB
 - 📚 Μαθαίνετε: `Serial.begin()`, `Serial.read()`, debugging
 
+### 📁 [08_Basics_Capstone](./08_Basics_Capstone/) - Smart Light Project
+**Capstone Project!** Συνδυασμός όλων των παραπάνω σε ένα ολοκληρωμένο "Έξυπνο Φως".
+- ⚡ Δυσκολία: Προχωρημένοι (για το επίπεδο Basics)
+- 🔧 Υλικά: Arduino, κουμπί, LED (built-in)
+- 📚 Μαθαίνετε: State Machines, συνδυασμό millis/serial/input, αρχιτεκτονική προγράμματος
+
 ---
 
 ## Σύνοψη Θεμάτων
@@ -118,11 +124,13 @@ Fade effect με PWM. Έλεγχος φωτεινότητας LED.
 | **04_Digital_IO** | Input/Output | `digitalRead()`, `INPUT_PULLUP` |
 | **05_Millis_Timing** | Χρονισμός | `millis()`, non-blocking |
 | **06_PWM_Fade** | Αναλογικό output | `analogWrite()`, PWM |
+| **07_Serial_Communication** | Σειριακή Επικοινωνία | `Serial.read()`, `Serial.available()` |
+| **08_Basics_Capstone** | Σύνθεση (Capstone) | State Machine, Integration |
 | **07_Serial_Communication** | Επικοινωνία | `Serial.begin()`, `Serial.read()` |
 
 ---
 
-## Πως να ξεκινήσετε (Quick Start)
+## Πώς να ξεκινήσετε (Quick Start)
 
 ### 1. Εγκατάσταση Arduino IDE
 1. Κατεβάστε από [arduino.cc/en/software](https://www.arduino.cc/en/software)
@@ -227,7 +235,7 @@ analogWrite(9, 128); // Output (PWM): D3,5,6,9,10,11 → 0-255
 ## Προαπαιτούμενα
 
 - 💻 Βασικές γνώσεις υπολογιστών
-- 🔌 Καμία εμπειρία με ηλεκτρονικά απαιτείται!
+- 🔌 Δεν απαιτείται καμία εμπειρία με ηλεκτρονικά!
 - 🧠 Διάθεση για μάθηση και πειραματισμό
 
 ---
