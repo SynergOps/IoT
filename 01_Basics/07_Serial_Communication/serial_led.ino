@@ -15,7 +15,8 @@
   - Πληκτρολογήστε '0' και πατήστε Enter -> Το LED σβήνει.
 */
 
-const int LED_PIN = LED_BUILTIN;
+const int LED_PIN = 9; // Χρησιμοποιούμε το Pin 9 (όπως στο προηγούμενο μάθημα PWM)
+// Αν δεν έχετε εξωτερικό LED, αλλάξτε το σε LED_BUILTIN (Pin 13)
 
 void setup()
 {
