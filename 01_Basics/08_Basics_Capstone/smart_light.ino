@@ -14,17 +14,15 @@
 */
 
 const int BTN = 2;
-const int LED = LED_BUILTIN;
+const int LED = 9; // Χρήση του εξωτερικού LED (όπως στα μαθήματα 06 & 07)
 
 // Καταστάσεις λειτουργίας
-enum Mode
-{
-    OFF,
-    SLOW_BLINK,
-    FAST_BLINK
-};
+// Χρησιμοποιούμε σταθερές (const int) για να δώσουμε ονόματα στις καταστάσεις μας
+const int OFF = 0;
+const int SLOW_BLINK = 1;
+const int FAST_BLINK = 2;
 
-Mode currentMode = OFF;
+int currentMode = OFF;
 
 // Μεταβλητές για το κουμπί (Edge Detection & Debounce)
 int lastButtonState = HIGH;
