@@ -88,31 +88,37 @@ Power Rails:          Internal Connections:
 - 🔧 Υλικά: Μόνο Arduino + USB
 - 📚 Μαθαίνετε: `Serial.print()`, debugging, ταυτόχρονη έξοδος LED & Serial
 
-### 📁 [04_Digital_IO](./04_Digital_IO/) - Κουμπί & LED
+### 📁 [04_Blink_Counter_Serial](./04_Blink_Counter_Serial/) - SOS Μετρητής με Serial
+**Μετράει τις αναβοσβησίες!** Μια παραλλαγή του SOS που μετράει τις φορές που αναβοσβήνει το LED και τις εμφανίζει στο Serial Monitor.
+- ⚡ Δυσκολία: Αρχάριοι
+- 🔧 Υλικά: Μόνο Arduino + USB
+- 📚 Μαθαίνετε: `static` μεταβλητές, μετρητές, serial output
+
+### 📁 [05_Digital_IO](./05_Digital_IO/) - Κουμπί & LED
 Διαβάζει κουμπί και ελέγχει LED. Εισαγωγή στο digital input/output.
 - ⚡ Δυσκολία: Αρχάριοι
 - 🔧 Υλικά: Arduino, κουμπί, 2× jumpers
 - 📚 Μαθαίνετε: `digitalRead()`, `INPUT_PULLUP`, button logic
 
-### 📁 [05_Millis_Timing](./05_Millis_Timing/) - Μη-αποκλειστικός Χρονισμός (Non-blocking)
+### 📁 [06_Millis_Timing](./06_Millis_Timing/) - Μη-αποκλειστικός Χρονισμός (Non-blocking)
 Blink χωρίς `delay()` χρησιμοποιώντας `millis()`. Κλειδί για πολύπλοκα προγράμματα!
 - ⚡ Δυσκολία: Μεσαίοι
 - 🔧 Υλικά: Μόνο Arduino + USB
 - 📚 Μαθαίνετε: `millis()`, non-blocking code, multiple timers
 
-### 📁 [06_PWM_Fade](./06_PWM_Fade/) - Ομαλή Μεταβολή Φωτεινότητας
+### 📁 [07_PWM_Fade](./07_PWM_Fade/) - Ομαλή Μεταβολή Φωτεινότητας
 Fade effect με PWM. Έλεγχος φωτεινότητας LED.
 - ⚡ Δυσκολία: Μεσαίοι
 - 🔧 Υλικά: Arduino, LED, αντίσταση 220Ω, jumpers
 - 📚 Μαθαίνετε: `analogWrite()`, PWM, for loops
 
-### 📁 [07_Serial_Communication](./07_Serial_Communication/) - Σειριακή Επικοινωνία
+### 📁 [08_Serial_Communication](./08_Serial_Communication/) - Σειριακή Επικοινωνία
 Έλεγχος LED από τον υπολογιστή μέσω Serial Monitor. Debugging & διαδραστικότητα.
 - ⚡ Δυσκολία: Μεσαίοι
 - 🔧 Υλικά: Arduino + USB
 - 📚 Μαθαίνετε: `Serial.begin()`, `Serial.read()`, debugging
 
-### 📁 [08_Basics_Capstone](./08_Basics_Capstone/) - Smart Light Project
+### 📁 [09_Basics_Capstone](./09_Basics_Capstone/) - Smart Light Project
 **Capstone Project!** Συνδυασμός όλων των παραπάνω σε ένα ολοκληρωμένο "Έξυπνο Φως".
 - ⚡ Δυσκολία: Προχωρημένοι (για το επίπεδο Basics)
 - 🔧 Υλικά: Arduino, κουμπί, LED (built-in)
@@ -129,10 +135,12 @@ Fade effect με PWM. Έλεγχος φωτεινότητας LED.
 | **01_Blink** | Δομή προγράμματος | `pinMode()`, `digitalWrite()`, `delay()` |
 | **02_Blink_SOS** | Συναρτήσεις & Patterns | `dot()`, `dash()`, sequences |
 | **03_Blink_SOS_Serial** | Serial Debug + Morse | `Serial.print()`, `dot()`, `dash()` |
-| **04_Digital_IO** | Input/Output | `digitalRead()`, `INPUT_PULLUP` |
-| **05_Millis_Timing** | Χρονισμός | `millis()`, non-blocking |
-| **06_PWM_Fade** | Αναλογικό output | `analogWrite()`, PWM |
-| **07_Serial_Communication** | Σειριακή Επικοινωνία | `Serial.read()`, `Serial.available()` |
+| **04_Blink_Counter_Serial** | static μεταβλητές | `static`, `Serial.print()`, μετρητές |
+| **05_Digital_IO** | Input/Output | `digitalRead()`, `INPUT_PULLUP` |
+| **06_Millis_Timing** | Χρονισμός | `millis()`, non-blocking |
+| **07_PWM_Fade** | Αναλογικό output | `analogWrite()`, PWM |
+| **08_Serial_Communication** | Επικοινωνία | `Serial.begin()`, `Serial.read()` |
+| **09_Basics_Capstone** | Συνδυασμός όλων | State Machines, integration |
 | **08_Basics_Capstone** | Σύνθεση (Capstone) | State Machine, Integration |
 | **07_Serial_Communication** | Επικοινωνία | `Serial.begin()`, `Serial.read()` |
 
@@ -281,7 +289,7 @@ analogWrite(9, 128); // Output (PWM): D3,5,6,9,10,11 → 0-255
 ### 🔢 Προτεινόμενη Σειρά
 Ακολουθήστε τα έργα με τη σειρά:
 ```
-01_Blink → 02_Blink_SOS → 03_Blink_SOS_Serial → 04_Digital_IO → 05_Millis_Timing → 06_PWM_Fade → 07_Serial_Communication → 08_Basics_Capstone
+01_Blink → 02_Blink_SOS → 03_Blink_SOS_Serial → 04_Blink_Counter_Serial → 05_Digital_IO → 06_Millis_Timing → 07_PWM_Fade → 08_Serial_Communication → 09_Basics_Capstone
 ```
 
 Κάθε έργο χτίζει πάνω στις έννοιες του προηγούμενου.
