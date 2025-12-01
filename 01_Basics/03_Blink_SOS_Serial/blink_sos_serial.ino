@@ -76,5 +76,3 @@ void loop()
 
   delay(WORD_SPACE);
 }
-delay(WORD_SPACE);
-}
