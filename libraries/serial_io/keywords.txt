@@ -1,0 +1,11 @@
+serial_io	KEYWORD1
+inputString	KEYWORD2
+inputCharacter	KEYWORD2
+inputInteger	KEYWORD2
+inputFloat	KEYWORD2
+stop	KEYWORD2
+print	KEYWORD2
+println	KEYWORD2
+
+DECIMAL_PLACES	LITERAL1
+    
