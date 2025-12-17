@@ -141,8 +141,6 @@ Fade effect με PWM. Έλεγχος φωτεινότητας LED.
 | **07_PWM_Fade** | Αναλογικό output | `analogWrite()`, PWM |
 | **08_Serial_Communication** | Επικοινωνία | `Serial.begin()`, `Serial.read()` |
 | **09_Basics_Capstone** | Συνδυασμός όλων | State Machines, integration |
-| **08_Basics_Capstone** | Σύνθεση (Capstone) | State Machine, Integration |
-| **07_Serial_Communication** | Επικοινωνία | `Serial.begin()`, `Serial.read()` |
 
 ---
 
