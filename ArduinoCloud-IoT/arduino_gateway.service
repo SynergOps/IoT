@@ -1,0 +1,20 @@
+[Unit]
+Description=Arduino UNO Gateway Service
+After=network.target network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Αλλάξτε το User αν χρειάζεται (π.χ. pi ή το user του συστήματός σας)
+User=username
+WorkingDirectory=/home/username/my_arduino_env
+
+# Εκτέλεση Python μέσα από το virtual environment
+ExecStart=/home/username/my_arduino_env/bin/python3 /home/username/my_arduino_env/arduino_gateway.py
+
+# Επανεκκίνηση αν κλείσει
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
