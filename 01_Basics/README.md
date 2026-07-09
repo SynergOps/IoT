@@ -297,26 +297,6 @@ analogWrite(9, 128); // Output (PWM): D3,5,6,9,10,11 → 0-255
 - Συνολικό module: 4-6 ώρες
 - Με πειραματισμό: 7-12 ώρες
 
----
-
-## Επόμενα Βήματα
-
-Αφού ολοκληρώσετε το **01_Basics**, προχωρήστε σε:
-
-📂 **[02_Input](../02_Input/)** - Αισθητήρες & Είσοδος
-- Potentiometers, photoresistors, temperature sensors
-- Analog input, calibration, smoothing
-
-📂 **[03_Output](../03_Output/)** - Ενεργοποιητές & Έξοδος
-- Servos, motors, buzzers, relays
-- Motor control, sound generation
-
-📂 **[04_Sensors](../04_Sensors/)** - Προχωρημένοι Αισθητήρες
-- Ultrasonic, PIR, DHT22, accelerometers
-- Sensor fusion, data logging
-
----
-
 ## Πόροι & Βοήθεια
 
 ### 📚 Επίσημη Τεκμηρίωση
